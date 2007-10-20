@@ -1,0 +1,1 @@
+<?phpclass EditLink extends TTemplateControl{	public function getPageNamespace()	{		$ns = explode(".", $this->Request['page']);		$end = array_pop($ns);		array_push($ns, $this->getApplication()->getGlobalization()->getCulture(), $end);		return "Application.pages.".implode(".", $ns);	}}?>

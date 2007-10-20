@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @author @@AUTHOR@@
+ * @since @@DATE@@
+ */
+class @@DAOIMPL@@ extends S2Dao_AbstractDao implements @@DAO@@ {
+
+    const BEAN = "@@BEAN@@";
+
+    public function __construct(S2Dao_DaoMetaDataFactory $daoMetaDataFactory){
+        parent::__construct($daoMetaDataFactory);
+    }
+    
+    public function get@@TABLE@@s(){
+        return $this->getEntityManager()->find("@@QUERY@@","");
+        //return $this->getEntityManager()->findArray("@@QUERY@@", "");
+        //return $this->getEntityManager()->findBean("@@QUERY@@", "");
+        //return $this->getEntityManager()->findObject("@@QUERY@@", "");
+    }
+    
+}
+
+?>

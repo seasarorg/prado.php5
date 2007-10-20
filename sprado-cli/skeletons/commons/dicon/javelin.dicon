@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container//EN"
+"http://www.seasar.org/dtd/components21.dtd">
+<components namespace="javelin">
+     <component name="javelinTraceInterceptor"
+                class="S2JavelinTraceInterceptor">
+         <property name="logArgs">true</property>
+         <property name="logReturn">true</property>
+         <property name="logStackTrace">false</property>
+         <property name="logFile">S2BASE_PHP5_VAR_DIR . "/logs/javelin.jvn"</property>
+     </component>
+</components>

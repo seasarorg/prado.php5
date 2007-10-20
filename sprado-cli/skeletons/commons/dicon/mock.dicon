@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container//EN"
+"http://www.seasar.org/dtd/components21.dtd">
+<components>
+    <component name="mock" class="@@ServiceInterface@@">
+        <aspect>
+            <component class="S2Container_MockInterceptor">
+                <initMethod name="setReturnValue">
+                    <arg>"getAll"</arg>
+                    <arg><![CDATA[
+                        array(
+                            array('id'   => 1,
+                                  'name' => 'foo'),
+                            array('id'   => 2,
+                                  'name' => 'bar')
+                        )
+                    ]]></arg>
+                </initMethod>
+            </component>
+        </aspect>
+    </component>
+</components>

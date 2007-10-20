@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<project name="s2base.php5" default="build" basedir=".">
+
+    <taskdef name="copy2" classname="src.phing.task.CopyFilesToOneDirTask" />
+    <taskdef name="gcore" classname="src.phing.task.GenerateCoreFileTask" />
+
+    <target name="init">
+        <property name="project.name" value="${phing.project.name}" />
+        <property name="project.classes.dir" value="${project.basedir}/classes" />
+        <property name="project.src.dir" value="${project.basedir}/src" />
+        <property name="project.config.dir" value="${project.basedir}/config" />
+        <property name="td" value="" />
+        <property name="tt" value="**/*Test*php" />
+    </target>
+
+    <target name="clean" depends="init">
+        <delete dir="${project.classes.dir}"/>
+        <delete file="${project.basedir}/s2base_zf.core.php"/>
+    </target>
+
+    <target name="prepare" depends="init">
+        <mkdir dir="${project.classes.dir}" />
+    </target>
+
+    <target name="build" depends="prepare">
+        <copy2 toDir="${project.classes.dir}">
+            <fileset dir="${project.src.dir}">
+                <include name="${project.name}/**/*.php"/>
+            </fileset>
+        </copy2>
+
+        <gcore searchDir="${project.classes.dir}"
+               coreFile="${project.basedir}/s2base_zf.core.php"
+               listFile="${project.src.dir}/phing/etc/s2base_zf.core.txt"/>
+    </target>
+
+    <target name="test" depends="build">
+        <php expression="require_once('../../../config/environment.inc.php')"/>
+        <php expression="require_once('config/environment.inc.php')"/>
+
+        <echo>test directory : test/${td}</echo>
+        <echo>test target : ${tt}</echo>
+        <phpunit2 haltonfailure="false" haltonerror="false">
+            <formatter type="plain" usefile="false"/>
+            <batchtest>
+                <fileset dir="test/${td}">
+                    <include name="${tt}"/>
+                </fileset>
+            </batchtest>
+        </phpunit2>
+    </target>
+</project>

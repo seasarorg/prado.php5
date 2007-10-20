@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<project name="project" default="command" basedir=".">
+
+    <target name="prepare">
+        <php expression="require_once('config/s2base_zf.inc.php')"/>
+    </target>
+
+    <target name="command" depends="prepare">
+        <command>
+            <fileset dir="${plugins.dir}/zf/commands">
+               <include name="*Command*.php"/>
+            </fileset>
+        </command>
+    </target>
+
+    <target name="test" depends="prepare">
+        <echo>test directory : test/${td}</echo>
+        <echo>test target : ${tt}</echo>
+        <phpunit2 haltonfailure="false" haltonerror="false">
+            <formatter type="plain" usefile="false"/>
+            <batchtest>
+                <fileset dir="test/${td}">
+                    <include name="${tt}"/>
+                </fileset>
+            </batchtest>
+        </phpunit2>
+    </target>
+</project>

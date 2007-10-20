@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @author @@AUTHOR@@
+ * @since @@DATE@@
+ */
+class @@BEAN@@ {
+
+// {{{
+// class constant
+const TABLE = "@@TABLE@@";
+@@CONSTANTS@@
+// }}}
+
+// {{{
+// class properties 
+@@PROPS@@
+// }}}
+
+// {{{
+// class methods
+@@METHODS@@
+// }}}
+
+}
+
+?>

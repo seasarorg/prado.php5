@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container//EN"
+"http://www.seasar.org/dtd/components21.dtd">
+<components>
+    <include path="%S2BASE_PHP5_ROOT%/app/commons/dicon/dao.dicon"/>
+    <component class="@@ServiceClass@@">
+        <aspect>
+            <component class="S2Container_DelegateInterceptor">
+                <initMethod name="setTarget">
+                    <arg>@@DaoComponent@@</arg>
+                </initMethod>
+                <initMethod name="addMethodNameMap">
+                    <!-- from service::getAllcd() to dao::findAllArray() -->
+                    <arg>"getAllCd"</arg>
+                    <arg>"findAllArray"</arg>
+                </initMethod>
+            </component>
+        </aspect>
+    </component>
+
+    <component class="@@DaoClass@@">
+        <aspect>dao.interceptor</aspect>
+    </component>
+</components>

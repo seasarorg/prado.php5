@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * @author @@AUTHOR@@
+ * @since @@DATE@@
+ */
+interface @@DAO@@ {
+    const BEAN = "@@BEAN@@";
+}
+
+?>

@@ -1,0 +1,4 @@
+<com:TContent ID="body">
+<com:TTextBox ID="EditBox" TextMode="MultiLine" Width="100%" Height="700px" />
+<com:TButton Text="Edit" OnClick="onEditButtonClicked" />
+</com:TContent>

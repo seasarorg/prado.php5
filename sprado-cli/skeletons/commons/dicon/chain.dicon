@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container//EN"
+"http://www.seasar.org/dtd/components.dtd">
+<components>
+    <component name="chain" class="S2Container_InterceptorChain">
+        <initMethod name="add">
+            <arg><component class="@@InterceptorClass@@"/></arg>
+        </initMethod>
+    </component>
+</components>
