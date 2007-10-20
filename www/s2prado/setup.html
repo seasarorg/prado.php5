@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja"><head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="ja">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="Seasar2, S2Container, DI, AOP, Dependency Injection, Aspect Oriented Programming, The Seasar Foundation, OSS, オープンソースソフトウェア, Java, フレームワーク">
+<meta name="description" content="私たちSeasarプロジェクトはオープンソースという仕組みの元、開発者のゆとりを実現できるプロダクトの開発と提供を通じて、ユーザと開発者とが共に喜びを分かち合える環境実現をお手伝いすることを目指し活動しています。 ">
+<title>The Seasar Project - S2Base.PHP5</title>
+
+<link rel="stylesheet" type="text/css" href="theme/main.css" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="theme/print.css" media="print"></head><body>
+
+<div id="wrapper">
+
+<div id="header">
+
+<div class="line"><span class="hide">spacer</span></div>
+
+<div id="logo">
+<h1 id="h01" class="hide">The Seasar Project</h1>
+<a href="http://www.seasar.org/">
+<img src="images/seasar_logo_blue.gif" alt="The Seasar Project" height="180" width="390">
+</a>
+</div>
+
+<div id="tool">
+</div>
+
+<div id="navi">
+<p><font size="-1"><a href="index.html">S2Base.PHP5 ホーム</a> &raquo; ドキュメント &raquo; セットアップ</font></p>
+</div>
+
+</div><!-- header -->
+
+<div id="contents_left">
+
+<h2>メニュー</h2>
+
+<h3>ドキュメント</h3>
+<ul>
+<li>セットアップ
+    <font size="-2">
+    <ul>
+        <li><a href="#start">はじめに</a></li>
+        <li><a href="#setup-pear">PEARパッケージのセットアップ</a></li>
+            <ul>
+                <li><a href="#install-pear">S2Base.PHP5 のインストール</a></li>
+                <li><a href="#uninstall-pear">PEARパッケージのアンインストール</a></li>
+                <li><a href="#project">プロジェクトの作成</a></li>
+            </ul>
+        <li><a href="#setup-full">フルパッケージのセットアップ</a></li>
+            <ul>
+                <li><a href="#install-full">S2Base.PHP5 のインストール</a></li>
+                <li><a href="#versionup">S2Container.PHP5 と S2Dao.PHP5 のバージョンアップ</a></li>
+            </ul>
+        <li><a href="#db">データベース接続設定</a></li>
+    </ul>
+    </font>
+</li>
+<li><a href="dir.html">ディレクトリ構成</a></li>
+<li><a href="cmdRef.html">コマンドリファレンス</a></li>
+</ul>
+
+<ul>
+<li><a href="withMaple-setup.html">with Maple</a> <i>(ver 3.1)</i></li>
+<li><a href="withAgavi-setup.html">with Agavi</a> <i>(deprecated)</i></li>
+<li><a href="withSymfony-setup.html">with Symfony</a> <i>(ver 1.0.5)</i></li>
+<li><a href="withSmarty-setup.html">with Smarty</a></li>
+<li><a href="withPRADO-setup.html">with PRADO</a></li>
+<li><a href="withZf-setup.html">with Zf</a></li>
+</ul>
+
+<h3>サブプロジェクト</h3>
+<ul>
+<li><a href="javelin.html">S2Javelin.PHP5</a></li>
+</ul>
+
+
+<h3>リンク</h3>
+<ul>
+    <li><a href="http://www.seasar.org/">Seasar.org</a></li>
+    <li><a href="http://svn.seasar.org/browse/?root=sandbox.s2base.php5">SVN リポジトリブラウザ</a></li>
+    <li><a href="https://www.seasar.org/svn/sandbox/s2base.php5/">SVN リポジトリ</a></li>
+    <li><a href="https://www.seasar.org/issues/browse/BASEPHP">Issue Tracker</a></li>
+    <li><a href="http://s2php5.jp/">s2php5.jp</a>
+        <ul>
+            <li><a href="http://labs.s2php5.jp/s2base">laboratory</a></li>
+            <li><a href="http://wiki.s2php5.jp/s2base.php5">wiki</a></li>
+            <li><a href="http://wiki.s2php5.jp/s2base.php5/plugins">plugins</a></li>
+            <li><a href="http://docs.s2php5.jp/s2base/api/">PHPDoc</a></li>
+        </ul>
+    </li>
+</ul>
+
+<h2>PHP プロジェクト</h2>
+
+<h3>Seasar.PHP</h3>
+
+<ul>
+    <li><a href="http://s2container.php5.seasar.org/">S2Container.PHP5</a></li>
+    <li><a href="http://s2dao.php5.seasar.org/">S2Dao.PHP5</a></li>
+</ul>
+
+<h3>Sandbox.PHP</h3>
+
+<ul>
+    <li><a href="http://kunit.jp/maple/">Maple.PHP</a></li>
+    <li><a href="http://s2ana.php5.sandbox.seasar.org/">S2AnA.PHP5</a></li>
+    <li><a href="http://s2base.php5.sandbox.seasar.org/">S2Base.PHP5</a></li>
+</ul>
+
+
+
+</div><!-- contents_left -->
+
+<div id="contents_center">
+
+<div id="article">
+
+<div class="section">
+<h2 id="h02"><a name="start">はじめに</a></h2>
+<p>
+　S2Base.PHP5では、<a href="http://phing.info/trac/">Phing</a> と <a href="http://pear.php.net/package/PHPUnit2">PHPUnit2</a> が<font color="red">必要</font>です。
+各ツールのドキュメントに従いインストールして下さい。
+</p>
+
+<ul>
+<li><a href="http://pear.php.net/manual/ja/installation.cli.php">PEARマニュアル インストール</a></li>
+<li>
+<a href="http://phing.info/trac/wiki/Users/Download">Phing ダウンロードページ</a> 
+<a href="http://phing.tigris.org/servlets/ProjectDocumentList"><i>( Release Archive ) </i></a>
+</li>
+<li><a href="http://pear.php.net/package/PHPUnit2/download">PHPUnit2 ダウンロードページ</a><br><font color="red">注</font> : PHPUnit3は動作未確認です。PHPUnit2は<a href="http://pear.phpunit.de/get/">こちらからダウンロード</a>できます。</li>
+</ul>
+</div>
+<br>
+
+<div class="section">
+<h2 id="h02"><a name="setup-pear">PEARパッケージのセットアップ</a></h2>
+
+<h3><a name="install-pear">S2Base.PHP5 のインストール</a></h3>
+<p>
+　S2Base-version.tgz を取得し、「pear install」コマンドでインストールして下さい。
+</p>
+<pre>
+% pear list | grep 'PEAR '
+PEAR                    1.4.11      stable
+%
+% pear config-get download_dir
+/tmp/pear/cache
+%
+% pear install S2Base-version.tgz
+% pear list -c __uri
+Installed packages, channel __uri:
+==================================
+Package Version State
+S2Base  1.0.0   beta
+%
+</pre>
+　　* PEARバージョン 1.4.11 以上が必要です。<br>
+　　* download_dir が存在することを確認して下さい。<br>
+　　* S2Container.PHP5、S2Dao.PHP5 のインストールが別途必要です。
+
+<h3><a name="uninstall-pear">PEARパッケージのアンインストール</a></h3>
+<p>
+　「pear uninstall」コマンドでアンインストールを行います。
+</p>
+
+<pre>
+% pear uninstall channel://__uri/S2Base
+uninstall ok: channel://__uri/S2Base-1.0.0
+% pear list -c __uri
+(no packages installed from channel __uri)
+%
+</pre>
+
+<h3><a name="project">プロジェクトの作成</a></h3>
+<p>
+　PEARパッケージのインストールが完了すると、PHP バイナリディレクトリ、または PHP_PEAR_BIN_DIR で
+指定されたディレクトリに、s2base (s2base.bat) コマンドがインストールされます。
+この s2base コマンドを用いてプロジェクトディレクトリを作成します。
+</p>
+
+<pre>
+% s2base --help
+[INFO ] Usage: % s2base &lt;project directory&gt; [smarty]
+%
+% s2base ./ProjectA
+% ls ProjectA
+app  build.xml  config  lib  test  var  vendor
+%
+% s2base ./ProjectB smarty
+% ls ProjectB
+app  build.xml  config  lib  public  test  var  vendor
+%
+</pre>
+
+s2base コマンドの第1引数にプロジェクトディレクトリへのパスを指定します。
+withSmarty を使用する場合は、第2引数に 「smarty」と設定します。withSmartyで必要になる public ディレクトリ等が追加されます。
+</p>
+</div>
+<br>
+
+<div class="section">
+<h2 id="h02"><a name="setup-full">フルパッケージのセットアップ</a></h2>
+
+<h3><a name="install-full">S2Base.PHP5 のインストール</a></h3>
+<p>
+　s2base.php5-version.zip を取得し、任意のディレクトリに解凍して下さい。
+s2base.php5 ディレクトリが作成されます。
+</p>
+
+<pre>
+% pwd
+/seasar.php/workspace
+%
+% jar xvf s2base.php5-version.zip
+% cd s2base.php5
+% ls
+app  build.xml  config  lib  public  test  var
+%
+</pre>
+<br>
+s2base.php5 ディレクトリにて phing コマンドを実行します。コマンドリストが表示されるとインストールが完了です。
+
+<pre>
+% pwd
+/seasar.php/workspace/s2base.php5
+%
+% phing
+Buildfile: /seasar.php/workspace/s2base.php5/build.xml
+
+project > prepare:
+      [php] Evaluating PHP expression: require_once('config/environment.inc.php')
+      [php] Evaluating PHP expression: require_once('lib/S2Base/S2Base.cmd.php')
+
+project > com:
+
+[ Command list ]
+0 : [ EXIT ]
+1 : command
+2 : dao
+3 : dicon
+4 : entity
+5 : goya
+6 : interceptor
+7 : module
+8 : service
+choice ? : 0
+
+BUILD FINISHED
+
+Total time: 3.3343 seconds
+%
+</pre>
+
+<h3><a name="versionup">S2Container.PHP5 と S2Dao.PHP5 のバージョンアップ</a></h3>
+<p>
+　S2Container.PHP5 と S2Dao.PHP5 のバージョンアップは、lib ディレクトリにアーカイブを解凍するだけです。
+</p>
+<ul>
+<li>S2Container.PHP5 <br>
+PEAR パッケージまたはフルパッケージを取得し、s2base.php5/lib/S2Container として解凍して下さい。
+</li>
+<li>S2Dao.PHP5 <br>
+フルパッケージを取得し、s2base.php5/lib/S2Dao として解凍して下さい。
+</li>
+</ul>
+
+</div>
+<br>
+
+<div class="section">
+<h2 id="h02"><a name="db">データベース接続設定</a></h2>
+
+<p>
+　データベースへの接続設定は、<a href="http://s2dao.php5.sandbox.seasar.org/setup.html#pdo_dicon">S2Dao の pdo.dicon </a>で行います。pdo.dicon は、app/commons/daoディレクトリにあります。ご使用のデータベースへの接続設定を行って下さい。
+</p>
+</div>
+<br>
+</div><!-- article -->
+
+</div><!-- contents_center -->
+
+<div id="footer">
+<address>&#169; Copyright The Seasar Foundation and the others 2005-2007, all rights reserved.</address>
+<div class="line"><span class="hide">spacer</span></div>
+</div><!-- footer -->
+
+</div><!-- wrapper -->
+
+</body></html>
