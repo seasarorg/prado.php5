@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja"><head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="ja">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="Seasar2, S2Container, DI, AOP, Dependency Injection, Aspect Oriented Programming, The Seasar Foundation, OSS, オープンソースソフトウェア, Java, フレームワーク">
+<meta name="description" content="私たちSeasarプロジェクトはオープンソースという仕組みの元、開発者のゆとりを実現できるプロダクトの開発と提供を通じて、ユーザと開発者とが共に喜びを分かち合える環境実現をお手伝いすることを目指し活動しています。 ">
+<title>The Seasar Project - S2Base.PHP5</title>
+
+<link rel="stylesheet" type="text/css" href="../theme/main.css" media="screen,projection">
+<link rel="stylesheet" type="text/css" href="../theme/print.css" media="print"></head><body>
+
+<div id="wrapper">
+
+<div id="header">
+
+<div class="line"><span class="hide">spacer</span></div>
+
+<div id="logo">
+<h1 id="h01" class="hide">The Seasar Project</h1>
+<a href="http://www.seasar.org/">
+<!--
+<img src="../images/seasar_logo_blue.gif" alt="The Seasar Project" height="180" width="390">
+-->
+<img src="../images/seasar_logo_blue.gif" alt="The Seasar Project" height="180">
+</a>
+</div>
+
+<div id="tool">
+</div>
+
+<div id="navi">
+<p><font size="-1">Seasar PRADOプロジェクト　ホーム</font></p></div>
+
+</div><!-- header -->
+
+<div id="contents_left">
+
+<h2>メニュー</h2>
+
+<h3>ドキュメント</h3>
+<ul>
+  <li><a href="../index.html">S2Prado TOP</a></li>
+  <li><a href="../s2prado/comp.html">S2Prado Component</a></li>
+  <li>S2Prado Tools
+        <ul>
+            <li><a href="../s2prado/cli.html">s2prado-cli.php</a></li>
+            <li><a href="../s2prado/s2base.html">S2Base Plugin</a></li>
+            <!-- 
+            <li><a href="../s2prado/dokuwiki.html">Dokuwiki Plugin</a></li>
+             -->
+        </ul>
+  </li>
+</ul>
+
+<!-- 
+<h3>サブプロジェクト</h3>
+<ul>
+<li><a href="../prado/doc.html">ドキュメント日本語化</a></li>
+<li><a href="../prado/portal.html">Prado Portal</a></li>
+</ul>
+-->
+
+<h3>リンク</h3>
+<ul>
+    <li><a href="http://www.seasar.org/">Seasar.org</a></li>
+    <li><a href="http://svn.seasar.org/browse/?root=sandbox.prado.php5">SVN リポジトリブラウザ</a></li>
+    <li><a href="https://www.seasar.org/svn/sandbox/prado.php5/">SVN リポジトリ</a></li>
+    <li><a href="https://www.seasar.org/issues/browse/PRADOPHP">Issue Tracker</a></li>
+    <li><a href="http://s2php5.jp/">s2php5.jp</a>
+        <ul>
+            <li><a href="http://labs.s2php5.jp/s2prado">laboratory</a></li>
+            <li><a href="http://wiki.s2php5.jp/s2prado.php5">wiki</a></li>
+            <li><a href="http://docs.s2php5.jp/s2prado/api/">PHPDoc</a></li>
+        </ul>
+    </li>
+</ul>
+
+<h2>PHP プロジェクト</h2>
+
+<h3>Seasar.PHP</h3>
+
+<ul>
+    <li><a href="http://s2container.php5.seasar.org/">S2Container.PHP5</a></li>
+    <li><a href="http://s2dao.php5.seasar.org/">S2Dao.PHP5</a></li>
+</ul>
+
+<h3>Sandbox.PHP</h3>
+
+<ul>
+    <li><a href="http://s2ana.php5.sandbox.seasar.org/">S2AnA.PHP5</a></li>
+    <li><a href="http://s2base.php5.sandbox.seasar.org/">S2Base.PHP5</a></li>
+</ul>
+
+
+
+</div><!-- contents_left -->
+
+<div id="contents_center">
+
+<div id="article">
+
+<div class="section">
+<h2 id="h02">Seasar PRADOプロジェクトへようこそ！</h2>
+
+<p>
+　Seasar PRADOプロジェクトでは、<a href="http://s2container.php5.sandbox.seasar.org/">S2Container.PHP5</a>および<a href="http://s2dao.php5.sandbox.seasar.org/">S2Dao.PHP5</a> を用いた<a href="http://pradosoft.com/">PRADO</a>アプリケーションの開発を支援します。
+</p>
+
+</div>
+
+
+<br>
+<!-- 
+<div class="section">
+<h2 id="h02">ダウンロード</h2>
+
+<ul>
+
+<li>2007-11-11
+<table>
+<tr>
+<td valign="top">Pear Package : </td>
+<td>
+<a href="download/S2Prado-0.1.0.tgz">S2Prado-0.1.0.tgz</a><br>
+</td>
+</tr>
+<tr>
+<td valign="top">Full Package : </td>
+<td><a href="download/s2prado.php5-0.1.0.zip">s2prado-0.1.0.zip</a><br>
+s2container.php5-1.1.3、s2dao.php5-1.1.2、prado3.1.3 が含まれます。</td>
+</tr>
+</table>
+</li>
+
+
+<li><a href="https://www.seasar.org/svn/sandbox/prado/trunk/s2prado.php5/ChangeLog">ChangeLog</a></li>
+
+</ul>
+
+</div>
+
+<br>
+<div class="section">
+<h2 id="h02">メーリングリスト</h2>
+<ul>
+<li>
+<a href="https://www.seasar.org/mailman/listinfo/prado">
+Seasar PRADO メーリングリスト
+</a><br>
+S2Prado.PHP5/PRADOを使っていて困ったこと・質問・要望などはこちらへ．
+</li>
+</ul>
+</div>
+
+<br>
+<div class="section">
+<h2 id="h02">動作環境</h2>
+
+<p>　PHP-5.2.3 以降で動作します。以下の環境で開発・動作確認しています。</p>
+<ul>
+    <li>WindowsXP : php-5.2.3-Win32</li>
+    <li>Mac OS X 10.4.10 : php-5.2.1</li>
+</ul>
+ -->
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</div><!-- article -->
+
+</div><!-- contents_center -->
+
+<div id="footer">
+<address>&#169; Copyright The Seasar Foundation and the others 2005-2007, all rights reserved.</address>
+<div class="line"><span class="hide">spacer</span></div>
+</div><!-- footer -->
+
+</div><!-- wrapper -->
+
+</body></html>
